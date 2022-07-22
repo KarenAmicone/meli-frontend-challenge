@@ -14,7 +14,7 @@ export const {
 		colors: {
 			primary: "#EFE60C",
 			secondary: "#333333",
-			neutralDarker: "#666666",
+			neutralDark: "#666666",
 			neutral: "#999999",
 			neutralLight: "#EEEEEE",
 			accent: "#3883FA",
