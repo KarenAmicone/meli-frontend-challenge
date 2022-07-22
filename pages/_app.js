@@ -1,7 +1,19 @@
-import '../styles/globals.css'
+import { globalCss } from "@stitches/react";
+import Layout from "../src/components/organsims/layout/layout";
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const globalStyles = globalCss({
+	"*": { margin: 0, padding: 0 },
+});
+
+function App({ Component, pageProps }) {
+	globalStyles();
+
+	return (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	);
 }
 
-export default MyApp
+export default App;
