@@ -4,6 +4,7 @@ import "../styles/globals.css";
 
 const globalStyles = globalCss({
 	"*": { margin: 0, padding: 0 },
+	body: { minHeight: "100vh" },
 });
 
 function App({ Component, pageProps }) {
