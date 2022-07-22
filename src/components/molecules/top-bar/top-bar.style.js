@@ -6,7 +6,7 @@ export const Bar = styled("header", {
 	columnGap: "2rem",
 	display: "flex",
 	height: "10vh",
-	padding: "0 10%",
+	padding: "0 15%",
 	width: "100%",
 });
 

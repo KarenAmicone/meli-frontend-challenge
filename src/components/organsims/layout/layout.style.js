@@ -9,4 +9,5 @@ export const Section = styled("section", {
 	height: "90%",
 	paddingTop: "3rem",
 	paddingBottom: "5rem",
+	minHeight: "90vh",
 });
