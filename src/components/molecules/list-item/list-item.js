@@ -9,6 +9,7 @@ import {
 	ProductName,
 	ProductPrice,
 } from "./list-item.style";
+import Text from "../../atoms/text/text";
 
 const ListItem = () => {
 	return (
@@ -16,7 +17,9 @@ const ListItem = () => {
 			<ImageContainer></ImageContainer>
 			<ProductInfoContainer>
 				<ProductPrice>
-					$1,000{" "}
+					<Text color="darker" size="xlarge">
+						$1,000{" "}
+					</Text>
 					<Image
 						alt="Shipment icon"
 						height="20px"
@@ -25,8 +28,16 @@ const ListItem = () => {
 						width="20px"
 					/>
 				</ProductPrice>
-				<ProductName>Samsung Galaxy M13</ProductName>
-				<Caption>Mendoza</Caption>
+				<ProductName>
+					<Text color="darker" size="large">
+						Samsung Galaxy M13
+					</Text>
+				</ProductName>
+				<Caption>
+					<Text color="dark" size="xs">
+						Mendoza
+					</Text>
+				</Caption>
 			</ProductInfoContainer>
 		</Item>
 	);

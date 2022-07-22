@@ -25,22 +25,16 @@ export const ProductInfoContainer = styled("div", {
 	width: "calc(100% - 196px)",
 });
 
-export const ProductPrice = styled("span", {
+export const ProductPrice = styled("div", {
 	alignSelf: "end",
-	color: "$secondary",
-	fontSize: "24px",
 	gridArea: "1/1/2/2",
 });
 
-export const ProductName = styled("p", {
-	color: "$secondary",
-	fontSize: "18px",
+export const ProductName = styled("div", {
 	gridArea: "2/1/3/2",
 });
 
-export const Caption = styled("p", {
+export const Caption = styled("div", {
 	alignSelf: "end",
-	color: "$neutralDark",
-	fontSize: "12px",
 	gridArea: "1/2/2/3",
 });
