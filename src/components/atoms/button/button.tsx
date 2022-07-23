@@ -1,6 +1,9 @@
 import { StyledButton } from "./button.style";
 
-const Button = ({ children }) => {
+type ButtonProps = {
+	children: React.ReactNode;
+};
+const Button = ({ children }: ButtonProps) => {
 	return (
 		<StyledButton
 			onClick={() => {

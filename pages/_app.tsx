@@ -1,4 +1,5 @@
 import { globalCss } from "@stitches/react";
+import { AppProps } from "next/app";
 import Layout from "../src/components/organsims/layout/layout";
 import "../styles/globals.css";
 
@@ -7,7 +8,7 @@ const globalStyles = globalCss({
 	body: { minHeight: "100vh" },
 });
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
 	globalStyles();
 
 	return (
