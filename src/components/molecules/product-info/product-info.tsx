@@ -2,19 +2,42 @@ import Text from "../../atoms/text/text";
 import { InfoContainer, PrimaryInfo } from "./product-info.style";
 import Button from "../../atoms/button/button";
 
-const ProductInfo = () => {
+type ProductInfoProps = {
+	condition: string;
+	sold_quantity?: number;
+	title: string;
+	price: {
+		currency: string;
+		amount: number;
+	};
+};
+
+const ProductInfo = ({
+	condition,
+	sold_quantity,
+	title,
+	price,
+}: ProductInfoProps) => {
+	const priceWithSign = () => {
+		const options = { style: "currency", currency: price.currency };
+		const numberFormat = new Intl.NumberFormat("en-US", options);
+		return numberFormat.format(price.amount);
+	};
+
 	return (
 		<InfoContainer>
 			<PrimaryInfo>
 				<Text color="darker" size="small">
-					Nuevo - 24 vendidos
+					{`${
+						condition === "new" ? "Nuevo" : "Usado"
+					} - ${sold_quantity} vendidos`}
 				</Text>
 				<Text color="darker" size="xlarge">
-					Deco Reverse Sombrero Oxford
+					{title}
 				</Text>
 			</PrimaryInfo>
 			<Text color="darker" size="xxxl">
-				$1.980
+				{priceWithSign()}
 			</Text>
 			<Button>Comprar</Button>
 		</InfoContainer>
