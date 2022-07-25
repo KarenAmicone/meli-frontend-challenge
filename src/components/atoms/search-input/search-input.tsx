@@ -2,9 +2,16 @@ import Image from "next/image";
 import { Form, Input, SearchButton } from "./search-input.style";
 import searchIcon from "/public/assets/ic_Search@2x.png.png";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const SearchInput = () => {
 	const [query, setQuery] = useState("");
+
+	const router = useRouter();
+
+	const searchItems = () => {
+		router.push(`/items/?q=${query}`);
+	};
 
 	return (
 		<Form>
@@ -16,8 +23,9 @@ const SearchInput = () => {
 			<SearchButton
 				onClick={(event) => {
 					event.preventDefault();
-					console.log(query);
+					searchItems();
 				}}
+				type="submit"
 			>
 				<Image
 					alt="Search icon"

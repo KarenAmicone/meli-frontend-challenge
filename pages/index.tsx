@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Home() {
+export function SearchPage() {
 	return (
 		<div>
 			<Head>
@@ -11,3 +11,5 @@ export default function Home() {
 		</div>
 	);
 }
+
+export default SearchPage;
