@@ -1,21 +1,46 @@
-/* import { GetServerSideProps } from "next";
-import { searchingItems } from "../../src/services/api"; */
+import { GetServerSideProps } from "next";
+import Categories from "../../src/components/atoms/categories/categories";
+import ProductsList from "../../src/components/organsims/products-list/products-list";
 
-function Items() {
-	return <div></div>;
+type ResultProps = {
+	results: {
+		items: [
+			{
+				city: string;
+				free_shipping: boolean;
+				id: string;
+				picture: string;
+				price: {
+					amount: number;
+					currency: string;
+				};
+				title: string;
+			}
+		];
+		categories: [[{ path_from_root: [] }]];
+	};
+};
+
+function SearchResult({ results }: ResultProps) {
+	return (
+		<>
+			<Categories categories={results.categories} />
+			<ProductsList items={results.items} />{" "}
+		</>
+	);
 }
 
-/* export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { query } = context;
-	const data = await fetch(`localhost:3000/api/items/?q=${query.q}`);
-	const ItemsData = data.json();
-	const data = await searchingItems(query.q);
-	const itemsData = JSON.parse(JSON.stringify(data));
+	const data = await fetch(
+		`https://meli-frontend-challenge-six.vercel.app/api/items/?q=${query.q}`
+	);
+	const searchResults = await data.json();
 	return {
 		props: {
-			items: ItemsData,
+			results: searchResults,
 		},
 	};
-}; */
+};
 
-export default Items;
+export default SearchResult;

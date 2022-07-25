@@ -1,6 +1,6 @@
 import { styled } from "@stitches/react";
 
-export const List = styled("article", {
+export const StyledList = styled("article", {
 	backgroundColor: "White",
 	borderRadius: "4px",
 	display: "flex",
