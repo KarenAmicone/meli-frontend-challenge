@@ -7,7 +7,6 @@ import { Router } from "next/router";
 import Loader from "../src/components/atoms/loader/loader";
 
 const globalStyles = globalCss({
-	"*": { margin: 0, padding: 0 },
 	body: { minHeight: "100vh" },
 });
 
