@@ -1,5 +1,26 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+type Category = {
+	category: {};
+	values: [];
+};
+
+type Item = {
+	id: string;
+	title: string;
+	currency_id: string;
+	price: object;
+	thumbnail: string;
+	condition: string;
+	shipping: {
+		free_shipping: boolean;
+	};
+	address: {
+		state_name: string;
+	};
+	item: {};
+};
+
 export default async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
@@ -13,8 +34,8 @@ export default async function handler(
 			const fourItems = data.results.slice(0, 4);
 			return {
 				author: { name: "Karen", lastname: "Amicone" },
-				categories: data.available_filters.map((category) => category.name),
-				items: fourItems.map((item) => ({
+				categories: data.filters.map((category: Category) => category.values),
+				items: fourItems.map((item: Item) => ({
 					id: item.id,
 					title: item.title,
 					price: {
