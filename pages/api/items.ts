@@ -24,6 +24,7 @@ export default async function handler(
 					picture: item.thumbnail,
 					condition: item.condition,
 					free_shipping: item.shipping.free_shipping,
+					city: item.address.state_name,
 				})),
 			};
 		});
