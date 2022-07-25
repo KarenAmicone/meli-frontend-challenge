@@ -15,4 +15,5 @@ export const LogoContainer = styled("div", {
 	width: "65px",
 	display: "flex",
 	alignItems: "center",
+	cursor: "pointer",
 });
