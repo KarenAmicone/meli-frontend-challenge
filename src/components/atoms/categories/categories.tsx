@@ -1,5 +1,5 @@
-import Text from "../text/text";
-import { CategoriesContainer } from "./categories.style";
+import Text from '../text/text';
+import { CategoriesContainer } from './categories.style';
 
 type CategoryProps = {
 	categories: [[{ path_from_root: [] }]];
@@ -7,12 +7,12 @@ type CategoryProps = {
 };
 
 const Categories = ({ categories }: CategoryProps) => {
-	const arr = categories[0];
+	const arr = categories?.[0];
 
 	return (
 		<CategoriesContainer>
 			{arr !== undefined && (
-				<Text color="neutral" size="medium">
+				<Text color='neutral' size='medium'>
 					{arr[0].path_from_root.map(
 						(category: { name: string }) => ` ${category.name} >`
 					)}

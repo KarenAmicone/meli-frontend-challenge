@@ -1,5 +1,5 @@
-import { GetServerSideProps } from "next";
-import ViewProduct from "../../src/components/organsims/view-product/view-product";
+import { GetServerSideProps } from 'next';
+import ViewProduct from '../../src/components/organsims/view-product/view-product';
 
 type ProductDetailProps = {
 	results: {
@@ -25,7 +25,12 @@ function ProductDetail({ results }: ProductDetailProps) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	const { id } = context.query;
 	const data = await fetch(
-		`https://meli-frontend-challenge-six.vercel.app/api/items/${id}`
+		`https://meli-frontend-challenge-six.vercel.app/api/items/${id}`,
+		{
+			headers: {
+				accept: 'application/json',
+			},
+		}
 	);
 	const productResult = await data.json();
 	return {

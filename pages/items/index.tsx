@@ -1,6 +1,6 @@
-import { GetServerSideProps } from "next";
-import Categories from "../../src/components/atoms/categories/categories";
-import ProductsList from "../../src/components/organsims/products-list/products-list";
+import { GetServerSideProps } from 'next';
+import Categories from '../../src/components/atoms/categories/categories';
+import ProductsList from '../../src/components/organsims/products-list/products-list';
 
 type ResultProps = {
 	results: {
@@ -25,7 +25,7 @@ function SearchResult({ results }: ResultProps) {
 	return (
 		<>
 			<Categories categories={results.categories} />
-			<ProductsList items={results.items} />{" "}
+			<ProductsList items={results.items} />
 		</>
 	);
 }
