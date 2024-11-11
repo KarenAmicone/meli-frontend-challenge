@@ -1,4 +1,4 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiRequest, NextApiResponse } from 'next';
 
 type Category = {
 	category: {};
@@ -33,19 +33,19 @@ export default async function handler(
 		.then((data) => {
 			const fourItems = data.results.slice(0, 4);
 			return {
-				author: { name: "Karen", lastname: "Amicone" },
+				author: { name: 'Karen', lastname: 'Amicone' },
 				categories: data.filters.map((category: Category) => category.values),
 				items: fourItems.map((item: Item) => ({
-					id: item.id,
-					title: item.title,
+					id: item?.id,
+					title: item?.title,
 					price: {
-						currency: item.currency_id,
-						amount: item.price,
+						currency: item?.currency_id,
+						amount: item?.price,
 					},
-					picture: item.thumbnail,
-					condition: item.condition,
-					free_shipping: item.shipping.free_shipping,
-					city: item.address.state_name,
+					picture: item?.thumbnail,
+					condition: item?.condition,
+					free_shipping: item?.shipping?.free_shipping,
+					city: item?.address?.state_name,
 				})),
 			};
 		});
