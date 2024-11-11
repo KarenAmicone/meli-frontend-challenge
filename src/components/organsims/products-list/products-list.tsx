@@ -1,5 +1,5 @@
-import ListItem from "../../molecules/list-item/list-item";
-import { StyledList } from "./products-list.style";
+import ListItem from '../../molecules/list-item/list-item';
+import { StyledList } from './products-list.style';
 type ProductsListProps = {
 	items: [
 		{
@@ -19,7 +19,7 @@ type ProductsListProps = {
 const ProductsList = ({ items }: ProductsListProps) => {
 	return (
 		<StyledList>
-			{items.map((item) => (
+			{items?.map((item) => (
 				<ListItem
 					city={item.city}
 					free_shipping={item.free_shipping}
